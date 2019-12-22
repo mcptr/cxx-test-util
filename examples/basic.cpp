@@ -47,5 +47,6 @@ int main(int argc, char** argv)
 		}
 	);
 
-	return unit.run(argc, argv);
+	int status = unit.run(argc, argv);
+	return status;
 }

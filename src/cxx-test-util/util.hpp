@@ -21,6 +21,7 @@ struct Configuration
 {
 	bool print_exceptions = true;
 	bool verbose = false;
+	bool debug = false;
 	bool no_cleanup = false;
 };
 
@@ -29,7 +30,6 @@ class TestCase
 public:
 	typedef std::function<void(TestCase&)> TestFunction_t;
 	typedef std::function<void()> Callable_t;
-
 
 	TestCase() = delete;
 	TestCase(const Configuration& config, const std::string& unit_name)
@@ -379,14 +379,14 @@ class UnitTest
 {
 public:
 	UnitTest() = default;
-	explicit UnitTest(const Configuration& config);
+	explicit UnitTest(const Configuration& config = Configuration());
 	virtual ~UnitTest() = default;
 
 	void test_case(const std::string& name,
 				   TestCase::TestFunction_t code);
 
 	int run(int argc, char** argv);
-	int run(const Options options);
+	int run(const Options& options);
 protected:
 	Configuration config_;
 	std::vector<std::pair<std::string, TestCase::TestFunction_t>> cases_;

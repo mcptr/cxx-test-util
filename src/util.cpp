@@ -227,7 +227,7 @@ int UnitTest::run(int argc, char** argv)
 	return run(options);
 }
 
-int UnitTest::run(const Options options)
+int UnitTest::run(const Options& options)
 {
 	if(options.is_debug()) {
 		options.dump_variables_map();
