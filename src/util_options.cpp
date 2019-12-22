@@ -12,7 +12,6 @@ void Options::dump_variables_map() const
 		std::cout << ": "  << std::setw(48) << std::left << it.first;
 		std::cout.width(0);
 		auto& raw = it.second.value();
-		std::string v;
 		if (auto v = boost::any_cast<int>(&raw)) {
 			std::cout << *v;
 		}
@@ -27,7 +26,7 @@ void Options::dump_variables_map() const
 	}
 }
 
-bool Options::parse(int argc, char** argv)
+bool Options::parse(int argc, const char* const* argv)
 {
 	using namespace std;
 
@@ -45,8 +44,7 @@ bool Options::parse(int argc, char** argv)
 			("no-cleanup,N",
 			 po::value<bool>()->implicit_value(true)->zero_tokens()->default_value(false),
 			 "do not clean logs/tmp")
-#ifdef EASYLOGGINGPP_H
-#warning("KAJSHDKJAHSHGDLKAJSHKDJASHD ################")
+#if defined(EASYLOGGINGPP_H)
 			("logfile,l",
 			 po::value<std::string>()->default_value(""),
 			 "logfile ")

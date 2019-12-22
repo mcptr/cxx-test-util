@@ -386,10 +386,9 @@ public:
 				   TestCase::TestFunction_t code);
 
 	int run(int argc, char** argv);
-	int run(const Options& options);
+	int run(const Options options);
 protected:
 	Configuration config_;
-	Options options_;
 	std::vector<std::pair<std::string, TestCase::TestFunction_t>> cases_;
 	std::vector<std::string> failed_;
 };

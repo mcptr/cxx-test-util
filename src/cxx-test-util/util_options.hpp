@@ -19,12 +19,16 @@ public:
 	virtual ~Options() = default;
 
 	template <class T>
-	const T get(const std::string& k) const
+	const T get(const std::string& k, const T& default_value = T()) const
 	{
+		if(!vm_.count(k)) {
+			return default_value;
+		}
+
 		try {
 			return vm_[k].as<T>();
 		}
-		catch(boost::bad_any_cast& e) {
+		catch(const boost::bad_any_cast& e) {
 			std::cerr << "ERROR: Options::get(): " << k << std::endl;
 			throw e;
 		}
@@ -32,15 +36,16 @@ public:
 
 	void dump_variables_map() const;
 
-	bool parse(int argc, char** argv);
+	bool parse(int argc, const char* const* argv);
 	bool has_help() const;
 	void display_help() const;
 
 	bool is_verbose() const;
 	bool is_debug() const;
 
-protected:
 	po::variables_map vm_;
+
+protected:
 	po::options_description all_;
 
 };

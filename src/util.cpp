@@ -224,11 +224,15 @@ int UnitTest::run(int argc, char** argv)
 		return 0;
 	}
 
-	return run(options_);
+	return run(options);
 }
 
-int UnitTest::run(const Options& options)
+int UnitTest::run(const Options options)
 {
+	if(options.is_debug()) {
+		options.dump_variables_map();
+	}
+
 	config_.verbose = options.is_verbose();
 
 	initialize_test_env(options);
