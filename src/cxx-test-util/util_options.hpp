@@ -1,10 +1,10 @@
 #pragma once
-#ifndef TEST_TOOLS_UTIL_OPTIONS_HXX
-#define TEST_TOOLS_UTIL_OPTIONS_HXX
 
+#ifndef CXX_TEST_UTIL_UTIL_OPTIONS_HPP
+#define CXX_TEST_UTIL_UTIL_OPTIONS_HPP
+
+#include <cxx-test-util/stdcpp.hpp>
 #include <boost/program_options.hpp>
-#include <string>
-#include <iostream>
 
 
 namespace test {

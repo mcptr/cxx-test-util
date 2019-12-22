@@ -1,17 +1,10 @@
-#ifndef TEST_TOOLS_UTIL_HXX
-#define TEST_TOOLS_UTIL_HXX
+#pragma once
 
-#include <memory>
-#include <functional>
-#include <iostream>
-#include <iomanip>
-#include <string>
-#include <map>
-#include <exception>
-#include <stdexcept>
-#include <vector>
+#ifndef CXX_TEST_UTIL_UTIL_HPP
+#define CXX_TEST_UTIL_UTIL_HPP
 
-#include "util_options.hxx"
+#include <cxx-test-util/util_options.hpp>
+#include <cxx-test-util/stdcpp.hpp>
 
 
 namespace test {
@@ -199,7 +192,7 @@ public:
 		}
 		catch(...) {
 			threw = true;
-			std::exception_ptr eptr = std::current_exception(); 
+			std::exception_ptr eptr = std::current_exception();
 			try {
 				std::rethrow_exception(eptr);
 			}

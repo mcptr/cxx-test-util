@@ -1,5 +1,5 @@
-#include <cxx-test-util/util.hxx>
-#include <cxx-test-util/util_options.hxx>
+#include <cxx-test-util/util.hpp>
+#include <cxx-test-util/util_options.hpp>
 
 #include <iostream>
 #include <sys/wait.h>

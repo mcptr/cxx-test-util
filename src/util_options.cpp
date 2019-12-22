@@ -1,4 +1,4 @@
-#include <cxx-test-util/util_options.hxx>
+#include <cxx-test-util/util_options.hpp>
 #include <exception>
 #include <iomanip>
 
@@ -45,9 +45,12 @@ bool Options::parse(int argc, char** argv)
 			("no-cleanup,N",
 			 po::value<bool>()->implicit_value(true)->zero_tokens()->default_value(false),
 			 "do not clean logs/tmp")
+#ifdef EASYLOGGINGPP_H
+#warning("KAJSHDKJAHSHGDLKAJSHKDJASHD ################")
 			("logfile,l",
 			 po::value<std::string>()->default_value(""),
 			 "logfile ")
+#endif
 			;
 
 		all_.add(options);
