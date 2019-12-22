@@ -1,5 +1,5 @@
-#include "include/util.hxx"
-#include "include/util_options.hxx"
+#include <cxx-test-util/util.hxx>
+#include <cxx-test-util/util_options.hxx>
 
 #include <iostream>
 #include <sys/wait.h>
@@ -7,6 +7,7 @@
 #include <cstdlib>
 #include <signal.h>
 #include <unistd.h>
+
 
 #if defined(EASYLOGGINGPP_H)
 #undef ELPP_STACKTRACE_ON_CRASH
