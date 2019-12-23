@@ -43,9 +43,8 @@ public:
 	bool is_verbose() const;
 	bool is_debug() const;
 
-	po::variables_map vm_;
-
 protected:
+	po::variables_map vm_;
 	po::options_description all_;
 
 };
