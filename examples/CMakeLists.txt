@@ -5,5 +5,5 @@ link_libraries(
 
 
 add_executable(basic.bin basic.cpp)
-target_link_libraries(basic.bin INTERFACE cxxtestutil)
+target_link_libraries(basic.bin INTERFACE cxxtestutil ${LIB_BOOST_PO})
 set_target_properties(basic.bin PROPERTIES IMPORTED_LOCATION cxxtestutil)

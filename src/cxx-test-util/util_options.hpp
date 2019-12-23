@@ -15,7 +15,7 @@ namespace po = boost::program_options;
 class Options
 {
 public:
-	Options() = default;
+	Options();
 	virtual ~Options() = default;
 
 	template <class T>
@@ -43,10 +43,12 @@ public:
 	bool is_verbose() const;
 	bool is_debug() const;
 
+	void add(const po::options_description& options);
 protected:
+	virtual void set_custom_options();
+
 	po::variables_map vm_;
 	po::options_description all_;
-
 };
 
 

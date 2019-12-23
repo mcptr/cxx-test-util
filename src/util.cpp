@@ -214,7 +214,6 @@ void UnitTest::test_case(const std::string& name,
 
 int UnitTest::run(int argc, char** argv)
 {
-	Options options;
 	if(!options.parse(argc, argv)) {
 		return -1;
 	}

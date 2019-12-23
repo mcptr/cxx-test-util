@@ -378,6 +378,8 @@ protected:
 class UnitTest
 {
 public:
+	Options options;
+
 	UnitTest() = default;
 	explicit UnitTest(const Configuration& config = Configuration());
 	virtual ~UnitTest() = default;
@@ -387,6 +389,7 @@ public:
 
 	int run(int argc, char** argv);
 	int run(const Options& options);
+
 protected:
 	Configuration config_;
 	std::vector<std::pair<std::string, TestCase::TestFunction_t>> cases_;
