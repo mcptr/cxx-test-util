@@ -21,7 +21,9 @@ target_link_libraries(cxxtestutil PRIVATE boost_program_options)
 include(GNUInstallDirs)
 install(TARGETS cxxtestutil
   LIBRARY
-  DESTINATION lib COMPONENT cxxtestutil
+  DESTINATION
+  usr/local/lib
+  COMPONENT cxxtestutil
   )
 
 install(
